@@ -1,0 +1,37 @@
+version: '2'
+services:
+  Bot1:
+    image: 'bot2:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      network_0: {}
+  Bot2:
+    image: 'bot2:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      network_0: {}
+  Server_tohack:
+    image: 'server_tohack:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      network_0: {}
+  attacker:
+    image: 'attacker:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      network_0: {}
+  attacker_malware:
+    image: 'attacker_malware:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      network_0: {}
+networks:
+  network_0:
+    ipam:
+      config:
+        - subnet: 193.20.2.1/24
